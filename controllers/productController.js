@@ -27,7 +27,6 @@ const addProduct = async (req, res) => {
 
 const getAllProducts = async (req, res) => {
   let products = await Product.findAll();
-  console.log(products);
   res.status(200).send(products);
 };
 // 3. get a single product
@@ -67,13 +66,15 @@ const getPublishedProduct = async (req, res) => {
 // 7. connect one to many relation Product and Reviews
 
 const getProductReviews = async (req, res) => {
-  const data = await Product.findAll({
+  const id = req.params.id;
+  const data = await Product.findOne({
     include: [
       {
         model: Review,
         as: "review",
       },
     ],
+    where: { id: id },
   });
   res.status(200).send(data);
 };

@@ -9,7 +9,6 @@ const ShowProducts = () => {
   useEffect(() => {
     const getProductsData = async () => {
       const { data } = await axios.get("/api/products/allProducts");
-      console.log(data);
       setProducts(data);
     };
     getProductsData();

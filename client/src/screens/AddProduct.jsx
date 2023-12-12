@@ -12,7 +12,6 @@ const AddProduct = ({ history }) => {
   const addProductHandler = async (e) => {
     e.preventDefault();
 
-    console.log("Before request");
     const data = {
       title: title,
       price: price,
@@ -21,7 +20,7 @@ const AddProduct = ({ history }) => {
     };
     const response = await axios.post("/api/products/addProduct", data);
 
-    navigate("/products");
+    navigate("/");
   };
 
   return (
