@@ -11,11 +11,11 @@ router.get("/published", productController.getPublishedProduct);
 
 ///// Review URL and Controller
 
-router.post("/addReview", reviewController.addReview);
 router.get("/allReviews", reviewController.getAllReviews);
+router.post("/addReview/:id", reviewController.addReview);
 
 ///// Get product reviews
-router.get("/getProductReviews", productController.getProductReviews);
+router.get("/getProductReviews/:id", productController.getProductReviews);
 
 ///// Products router
 router.get("/:id", productController.getOneProduct);

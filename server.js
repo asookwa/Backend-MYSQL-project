@@ -3,13 +3,13 @@ const cors = require("cors");
 
 const app = express();
 
-//whitelisting 8081
-var corsOptions = {
-  origin: "https://localhost:8081",
-};
+// //whitelisting 8081
+// var corsOptions = {
+//   origin: "https://localhost:8080",
+// };
 
-// middleware
-app.use(cors(corsOptions));
+// // middleware
+// app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
